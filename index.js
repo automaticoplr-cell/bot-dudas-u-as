@@ -22,9 +22,7 @@ PERSONALIDAD Y TONO:
 - Nunca suenes robótica.
 - Responde de manera breve, clara y útil.
 - Utiliza máximo uno o dos párrafos cortos.
-- Utiliza emojis de forma moderada y natural para que los mensajes se vean agradables en WhatsApp.
-- Utiliza *negritas de WhatsApp* para destacar información importante como el nombre del programa, precio, modalidad, beneficios y métodos de pago.
-- Organiza visualmente la información cuando ayude a que el mensaje sea más fácil de leer.
+- Puedes utilizar emojis de forma moderada y natural.
 - No presiones a la persona para comprar.
 - No hagas preguntas abiertas innecesarias.
 - Varía ligeramente la redacción sin alterar el significado de la información oficial.
@@ -66,8 +64,8 @@ Glow Nails incluye 50 clases pregrabadas paso a paso.
 Las clases son 100% online.
 No son presenciales.
 No existe una fecha fija de inicio.
-Una vez confirmado el pago, la persona recibe sus accesos y puede comenzar de inmediato.
-Puede estudiar cuando quiera, a su propio ritmo, y volver a consultar las clases cuando lo necesite.
+Una vez que la persona recibe su acceso puede comenzar de inmediato.
+Puede estudiar a su propio ritmo y volver a consultar las clases cuando lo necesite.
 
 CONTENIDO PRINCIPAL:
 Las clases incluyen diferentes técnicas y contenidos de uñas, entre ellos preparación de las uñas, esmaltado semipermanente, capping, acrílico, moldes esculturales, tips, encapsulados, Baby Boomer, Ombré o Baby Color, Acrygel, Polygel, gel, Dual System, nivelación, uso de torno, Soft Gel, manicura rusa o combinada, retirado, higiene, desinfección y diferentes técnicas y diseños de Nail Art.
@@ -96,28 +94,13 @@ Nunca debes presentarlo como una certificación oficial.
 ENTREGA Y ACCESO:
 La entrega es 100% digital.
 Una vez confirmado el pago, la persona recibe por WhatsApp los accesos a sus clases y materiales.
-Puede comenzar de inmediato y estudiar en línea a su propio ritmo.
+Puede estudiar en línea a su propio ritmo.
 Las clases son pregrabadas.
 
 OBJETIVO DE LA CONVERSACIÓN:
 Tu prioridad es resolver correctamente la duda de la persona.
 
-Cuando después de resolver la duda resulte apropiado avanzar al siguiente paso, NO preguntes si la persona quiere conocer los métodos de pago.
-
-Debes presentar directamente las dos opciones disponibles y preguntarle cuál prefiere.
-
-El cierre correcto debe seguir esta lógica:
-
-💖 *Los métodos de pago disponibles son:*
-🏦 *Transferencia bancaria*
-🏪 *Depósito en OXXO*
-
-¿Cuál de las dos opciones prefieres? 😊
-
-Puedes variar ligeramente la redacción, pero SIEMPRE debes:
-1. Informar directamente que existen las opciones de Transferencia bancaria y depósito en OXXO.
-2. Preguntar cuál de las dos opciones prefiere.
-3. Nunca preguntar "¿Quieres que te comparta los métodos de pago?", "¿Quieres conocer las formas de pago?" ni expresiones similares.
+Cuando sea apropiado después de responder, dirige de forma amable al siguiente paso preguntando si prefiere realizar su pago mediante Transferencia bancaria o depósito en OXXO.
 
 El cierre debe sentirse como una continuación natural de la conversación y nunca como presión de venta.
 
@@ -141,17 +124,15 @@ function elegirAleatoria(opciones) {
 function limpiarRespuesta(texto) {
   return String(texto || "")
     .trim()
-    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s{2,}/g, " ")
     .replace(/\n{3,}/g, "\n\n");
 }
 
 function cierreComercial() {
   const cierres = [
-    `💖 *Los métodos de pago disponibles son:*\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál de las dos opciones prefieres? 😊`,
-
-    `✨ Para comenzar puedes elegir entre:\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál opción prefieres? 💖`,
-
-    `💕 Puedes realizar tu pago mediante:\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál de las dos opciones prefieres? 😊`,
+    `Si deseas comenzar 💖 puedes realizar tu pago por *Transferencia bancaria o depósito en OXXO*. ¿Cuál opción prefieres?`,
+    `Si quieres comenzar con Glow Nails 💅 puedes elegir entre *Transferencia bancaria o depósito en OXXO*. ¿Cuál prefieres?`,
+    `Cuando quieras comenzar ✨ puedes realizar tu pago mediante *Transferencia bancaria o depósito en OXXO*. ¿Cuál opción prefieres?`,
   ];
 
   return elegirAleatoria(cierres);
@@ -204,11 +185,9 @@ function respuestaDirecta(textoNormalizado) {
   // 1. PRECIO
   if (textoNormalizado.includes("precio")) {
     const respuestas = [
-      `💅✨ El precio promocional de *Glow Nails — Programa de Uñas desde Cero* es de solo *$99 MXN*. 💖`,
-
-      `💖 Actualmente puedes acceder a *Glow Nails — Programa de Uñas desde Cero* por un precio promocional de *$99 MXN*. 💅✨`,
-
-      `✨ *Glow Nails — Programa de Uñas desde Cero* está disponible por solo *$99 MXN*. 💅💕`,
+      `💖 El precio promocional de *Glow Nails — Programa de Uñas desde Cero* es de *$99 MXN*.`,
+      `✨ Actualmente puedes acceder a *Glow Nails — Programa de Uñas desde Cero* por un precio promocional de *$99 MXN*.`,
+      `💅 El acceso a *Glow Nails — Programa de Uñas desde Cero* tiene un precio promocional de *$99 MXN*.`,
     ];
 
     return {
@@ -223,30 +202,25 @@ function respuestaDirecta(textoNormalizado) {
   // 2. FECHA DE INICIO
   if (textoNormalizado.includes("inicio")) {
     const respuestas = [
-      `💅✨ *Glow Nails no tiene una fecha fija de inicio*, porque las clases son *100% online y pregrabadas*.\n\nApenas confirmemos tu pago, te enviaremos tus accesos para que puedas comenzar y estudiar *cuando tú quieras y a tu propio ritmo*. 💖`,
-
-      `✨ No tienes que esperar una fecha para comenzar. *Glow Nails es 100% online y las clases son pregrabadas.* 💅\n\nUna vez confirmado tu pago, recibirás tus accesos y podrás comenzar de inmediato, avanzando *a tu propio ritmo*. 💕`,
-
-      `💖 Puedes comenzar *Glow Nails* en cuanto recibas tus accesos. Las clases son *100% online y pregrabadas*, por lo que no existe una fecha fija de inicio ni tienes que conectarte en un horario determinado. 💅✨\n\nPodrás estudiar cuando quieras y avanzar a tu propio ritmo.`,
+      `💅✨ *Glow Nails no tiene una fecha fija de inicio*, porque las clases son *100% online y pregrabadas*.\n\nApenas confirmemos tu pago, te enviaremos tus accesos para que puedas estudiar *cuando tú quieras y a tu propio ritmo*. 💖`,
+      `✨ No tienes que esperar una fecha para comenzar. Las clases de *Glow Nails son 100% online y pregrabadas*. 💅\n\nUna vez confirmado tu pago, recibirás tus accesos y podrás estudiar *cuando quieras y a tu propio ritmo*. 💕`,
+      `💖 Puedes comenzar *Glow Nails* una vez que recibas tus accesos. Las clases son *100% online y pregrabadas*, por lo que no existe una fecha fija de inicio. 💅✨\n\nPodrás avanzar *cuando tú quieras y a tu propio ritmo*.`,
     ];
+
+    const respuestaInicio = elegirAleatoria(respuestas);
 
     return {
       intencion: "inicio_clases",
-      respuesta: agregarCierre(
-        elegirAleatoria(respuestas),
-        textoNormalizado
-      ),
+      respuesta: `${respuestaInicio}\n\n💖 *Los métodos de pago son:*\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál prefieres? 😊`,
     };
   }
 
   // 3. CANTIDAD DE CLASES
   if (textoNormalizado.includes("cuantas")) {
     const respuestas = [
-      `💅✨ *Glow Nails incluye 50 clases pregrabadas paso a paso* que puedes estudiar a tu propio ritmo.\n\nAdemás, recibes tus *materiales de práctica, bonos y recursos complementarios* para seguir aprendiendo y practicando. 💖`,
-
-      `✨ El programa principal *Glow Nails cuenta con 50 clases pregrabadas*. 💅\n\nTambién tendrás acceso a tus *materiales de práctica y recursos complementarios* incluidos en tu formación. 💕`,
-
-      `💖 Tendrás acceso a *50 clases pregrabadas de Glow Nails*, además de todos tus *materiales de práctica y recursos complementarios*. 💅✨`,
+      `💅 *Glow Nails incluye 50 clases pregrabadas paso a paso*, que puedes estudiar a tu propio ritmo y volver a consultar todas las veces que necesites. ✨\n\nAdemás, recibes tus *materiales de práctica, la Biblioteca Complementaria de Manicure y el Curso de Pedicure de regalo*, por lo que tu formación incluye muchos recursos adicionales para seguir aprendiendo y practicando. 💖`,
+      `✨ El programa principal *Glow Nails cuenta con 50 clases pregrabadas*, que puedes estudiar a tu propio ritmo, además de tus materiales y recursos complementarios.`,
+      `💖 Tendrás acceso a *50 clases pregrabadas de Glow Nails*, además de los materiales de práctica y recursos complementarios incluidos.`,
     ];
 
     return {
@@ -261,11 +235,9 @@ function respuestaDirecta(textoNormalizado) {
   // 4. PRESENCIAL / ONLINE
   if (textoNormalizado.includes("presencial")) {
     const respuestas = [
-      `💅✨ *Glow Nails no es presencial.* La formación es *100% online* y todas las clases son pregrabadas.\n\nAsí puedes estudiar desde donde estés, cuando quieras y *a tu propio ritmo*. 💖`,
-
-      `💖 Las clases son *100% online y pregrabadas*, por lo que no necesitas asistir presencialmente ni conectarte en un horario específico. 💅✨`,
-
-      `✨ *Glow Nails se realiza completamente en línea.* Las clases son pregrabadas y puedes avanzar a tu propio ritmo desde donde te encuentres. 💕`,
+      `😊 Glow Nails *no es presencial*. Es un programa *100% online con clases pregrabadas*, para que puedas estudiar a tu propio ritmo.`,
+      `💅 Las clases son *100% online y pregrabadas*, por lo que no necesitas asistir presencialmente ni conectarte en un horario específico.`,
+      `✨ Glow Nails se realiza completamente *en línea*. Las clases son pregrabadas y puedes avanzar a tu propio ritmo.`,
     ];
 
     return {
@@ -280,11 +252,9 @@ function respuestaDirecta(textoNormalizado) {
   // 5. ENTREGA / ACCESO
   if (textoNormalizado.includes("recibo")) {
     const respuestas = [
-      `💖 La entrega de *Glow Nails es 100% digital*. 📲✨\n\nUna vez confirmado tu pago, recibirás por WhatsApp *tus accesos a las clases y a todos tus materiales* para que puedas comenzar. 💅`,
-
-      `✨ Una vez confirmado tu pago, recibirás directamente por WhatsApp *los accesos a tus clases y materiales*. 📲💅\n\nTodo es *100% digital* y podrás estudiar a tu propio ritmo. 💖`,
-
-      `💅💕 Tu acceso se entrega de forma *100% digital*. Después de confirmar tu pago recibirás por WhatsApp tus accesos a *Glow Nails y todos los materiales incluidos*. ✨`,
+      `💖 La entrega es *100% digital*. Una vez confirmado tu pago, recibirás por WhatsApp los accesos a tus clases y materiales para que puedas comenzar a estudiar en línea a tu propio ritmo.`,
+      `✨ Una vez confirmado tu pago, recibirás por WhatsApp *los accesos a tus clases y materiales*. Todo es 100% digital y podrás estudiar en línea a tu propio ritmo.`,
+      `💅 Tu acceso se entrega de forma *100% digital*. Después de confirmar tu pago recibirás por WhatsApp los accesos a las clases y materiales de Glow Nails.`,
     ];
 
     return {
@@ -299,11 +269,9 @@ function respuestaDirecta(textoNormalizado) {
   // 6. CERTIFICADO
   if (textoNormalizado.includes("certificado")) {
     const respuestas = [
-      `📜✨ Sí, *Glow Nails incluye tu Certificado de Participación* una vez que completes tu formación. 💅💖`,
-
-      `💖 ¡Sí! Dentro de *Glow Nails* está incluido tu *Certificado de Participación*. 📜✨`,
-
-      `✨ Sí, tu formación incluye un *Certificado de Participación Glow Nails*. 📜💅💕`,
+      `📜 Sí, Glow Nails incluye un *Certificado de Participación* una vez que completes tu formación.`,
+      `💖 Sí. Dentro de Glow Nails está incluido tu *Certificado de Participación*.`,
+      `✨ Sí, el programa incluye un *Certificado de Participación Glow Nails*.`,
     ];
 
     return {
@@ -318,11 +286,9 @@ function respuestaDirecta(textoNormalizado) {
   // 7. EXAMEN
   if (textoNormalizado.includes("examen")) {
     const respuestas = [
-      `😊💖 No, *Glow Nails no incluye examen*.\n\nEl programa está enfocado en el *aprendizaje y la práctica*, para que puedas desarrollar tus habilidades paso a paso y a tu propio ritmo. 💅✨`,
-
-      `💅✨ No necesitas presentar examen. *Glow Nails está enfocado en aprender, practicar y desarrollar tus habilidades* paso a paso. 💖`,
-
-      `✨ No, el programa *no incluye examen*. Podrás avanzar con tus clases y utilizar tus materiales de práctica para ir mejorando tus habilidades a tu propio ritmo. 💕`,
+      `😊 No, Glow Nails *no incluye examen*. El programa está enfocado en el aprendizaje y la práctica para que puedas desarrollar tus habilidades paso a paso.`,
+      `💅 No necesitas presentar examen. Glow Nails está enfocado principalmente en *aprender, practicar e ir desarrollando tus habilidades* a tu propio ritmo.`,
+      `✨ No, el programa no incluye examen. La formación está orientada a que avances con las clases y utilices tus materiales para practicar y mejorar paso a paso.`,
     ];
 
     return {
@@ -337,11 +303,9 @@ function respuestaDirecta(textoNormalizado) {
   // 8. EXPERIENCIA PREVIA
   if (textoNormalizado.includes("experiencia")) {
     const respuestas = [
-      `💖 No necesitas experiencia previa. *Glow Nails está pensado principalmente para aprender desde cero*. 💅✨\n\nPodrás avanzar paso a paso con las clases y practicar hasta ir desarrollando tus habilidades.`,
-
-      `😊✨ Puedes comenzar aunque *no tengas experiencia*. Glow Nails está diseñado principalmente para personas que desean *aprender uñas desde cero*. 💅💕`,
-
-      `💅💖 No es necesario tener experiencia previa. Podrás *comenzar desde cero* y avanzar paso a paso mediante las clases y la práctica. ✨`,
+      `💖 No necesitas experiencia previa. *Glow Nails está pensado principalmente para aprender desde cero*, avanzando con las clases y la práctica paso a paso.`,
+      `😊 Puedes comenzar aunque no tengas experiencia. Glow Nails está diseñado principalmente para personas que desean *aprender uñas desde cero*.`,
+      `💅 No es necesario tener experiencia previa para comenzar. Podrás aprender desde cero y avanzar paso a paso mediante las clases y la práctica.`,
     ];
 
     return {
@@ -356,11 +320,9 @@ function respuestaDirecta(textoNormalizado) {
   // 9. QUÉ INCLUYE
   if (textoNormalizado.includes("incluye")) {
     const respuestas = [
-      `💅✨ *Glow Nails incluye:*\n\n🎥 *50 clases pregrabadas paso a paso*\n📝 *Más de 200 diseños y ejercicios de práctica*\n📚 *Biblioteca Complementaria de Manicure*\n🦶 *Curso de Pedicure de REGALO*\n📘 *Ruta de Aprendizaje*\n📜 *Certificado de Participación*\n♾️ *Acceso digital de por vida* 💖`,
-
-      `💖 Con *Glow Nails* recibes una formación muy completa:\n\n🎥 50 clases pregrabadas\n📝 Más de 200 diseños y ejercicios de práctica\n📚 Biblioteca Complementaria de Manicure\n🦶 Curso de Pedicure de regalo\n📘 Ruta de Aprendizaje\n📜 Certificado de Participación\n♾️ Acceso digital de por vida ✨`,
-
-      `✨ Tu acceso a *Glow Nails* incluye *50 clases pregrabadas*, más de *200 diseños y ejercicios de práctica*, Biblioteca Complementaria de Manicure, Curso de Pedicure de regalo, Ruta de Aprendizaje y Certificado de Participación. 💅💖\n\nAdemás, tendrás *acceso digital de por vida*. ♾️`,
+      `💅 Glow Nails incluye *50 clases pregrabadas*, más de *200 diseños y ejercicios de práctica*, Biblioteca Complementaria de Manicure, Curso de Pedicure de regalo, Ruta de Aprendizaje y Certificado de Participación, con acceso digital de por vida.`,
+      `✨ Con Glow Nails recibes *50 clases pregrabadas paso a paso*, más de 200 diseños y ejercicios de práctica, Biblioteca Complementaria de Manicure, Curso de Pedicure de regalo, Ruta de Aprendizaje y Certificado de Participación. Tu acceso es digital y de por vida.`,
+      `💖 Tu programa incluye *50 clases de Glow Nails*, más de 200 diseños y ejercicios de práctica, Biblioteca Complementaria de Manicure, Curso de Pedicure de regalo, Ruta de Aprendizaje y Certificado de Participación, con acceso digital de por vida.`,
     ];
 
     return {
@@ -375,16 +337,14 @@ function respuestaDirecta(textoNormalizado) {
   // 10. FORMAS DE PAGO
   if (textoNormalizado.includes("pagar")) {
     const respuestas = [
-      `💖 *Los métodos de pago disponibles son:*\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál de las dos opciones prefieres? 😊`,
-
-      `✨ Puedes realizar tu pago mediante:\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál opción prefieres? 💖`,
-
-      `💕 Tenemos disponibles estas dos opciones de pago:\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál de las dos prefieres? 😊`,
+      `💖 Puedes realizar tu pago mediante *Transferencia bancaria o depósito en efectivo en OXXO*.`,
+      `😊 Tenemos disponibles dos formas de pago: *Transferencia bancaria o depósito en efectivo en OXXO*.`,
+      `✨ Puedes elegir la opción que te resulte más cómoda: *Transferencia bancaria o depósito en efectivo en OXXO*.`,
     ];
 
     return {
       intencion: "metodos_pago",
-      respuesta: elegirAleatoria(respuestas),
+      respuesta: `${elegirAleatoria(respuestas)}\n\n¿Cuál de las dos opciones prefieres? 💕`,
     };
   }
 
@@ -403,15 +363,12 @@ app.post("/mensaje", async (req, res) => {
       req.body.message ||
       "";
 
-    console.log(
-      "Mensaje recibido:",
-      texto ? "[contenido recibido]" : "[vacío]"
-    );
+    console.log("Mensaje recibido:", texto ? "[contenido recibido]" : "[vacío]");
 
-    if (!texto || !String(texto).trim()) {
+    if (!texto) {
       return res.json({
         respuesta:
-          "💖 No pude identificar tu mensaje. Por favor, escríbelo nuevamente.",
+          "No pude identificar el mensaje. Por favor, escríbelo nuevamente.",
       });
     }
 
@@ -430,62 +387,39 @@ app.post("/mensaje", async (req, res) => {
 
     console.log("Intención detectada: consulta abierta");
 
-    try {
-      const response = await openai.responses.create({
-        model: "gpt-4.1-mini",
-        temperature: 0.4,
-        input: [
-          {
-            role: "system",
-            content: SYSTEM_PROMPT,
-          },
-          {
-            role: "user",
-            content: texto,
-          },
-        ],
-      });
+    const response = await openai.responses.create({
+      model: "gpt-4.1-mini",
+      temperature: 0.4,
+      input: [
+        {
+          role: "system",
+          content: SYSTEM_PROMPT,
+        },
+        {
+          role: "user",
+          content: texto,
+        },
+      ],
+    });
 
-      const respuestaIA = limpiarRespuesta(response.output_text || "");
+    const respuestaIA = response.output_text || "";
 
-      if (!respuestaIA) {
-        console.log("OpenAI devolvió una respuesta vacía");
+    const respuestaFinal = agregarCierre(
+      respuestaIA,
+      textoNormalizado
+    );
 
-        return res.json({
-          respuesta:
-            "💖 Para responderte correctamente necesito confirmar ese dato con nuestro equipo.",
-        });
-      }
+    console.log("Respuesta generada mediante OpenAI");
 
-      const respuestaNormalizada = normalizarTexto(respuestaIA);
-
-      const requiereConfirmacion =
-        respuestaNormalizada.includes("confirmar") &&
-        respuestaNormalizada.includes("equipo");
-
-      const respuestaFinal = requiereConfirmacion
-        ? respuestaIA
-        : agregarCierre(respuestaIA, textoNormalizado);
-
-      console.log("Respuesta generada mediante OpenAI");
-
-      return res.json({
-        respuesta: respuestaFinal,
-      });
-    } catch (openAIError) {
-      console.error("Error al consultar OpenAI:", openAIError.message);
-
-      return res.status(200).json({
-        respuesta:
-          "💖 En este momento no pude procesar tu consulta. Por favor, inténtalo nuevamente en unos minutos.",
-      });
-    }
+    return res.json({
+      respuesta: respuestaFinal,
+    });
   } catch (error) {
     console.error("Error en /mensaje:", error.message);
 
     return res.status(200).json({
       respuesta:
-        "💖 En este momento no pude procesar tu mensaje. Por favor, inténtalo nuevamente en unos minutos.",
+        "En este momento no pude procesar tu mensaje. Por favor, inténtalo nuevamente en unos minutos.",
     });
   }
 });

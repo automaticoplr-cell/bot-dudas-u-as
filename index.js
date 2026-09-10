@@ -348,6 +348,25 @@ function respuestaDirecta(textoNormalizado) {
     };
   }
 
+  // 11. CONFIANZA / ¿ES REAL? / ¿ES ESTAFA?
+  if (
+    textoNormalizado.includes("estafa") ||
+    textoNormalizado.includes("real")
+  ) {
+    const respuestas = [
+      `💖 Entendemos perfectamente tu duda, especialmente cuando se trata de una compra por internet.\n\n✨ *Glow Nails es un programa digital de Glow Beauty Academy.* Una vez confirmado tu pago, recibirás por WhatsApp tus accesos a las *50 clases de Glow Nails* y a todos los materiales, bonos y regalos incluidos en tu compra. 💅📲\n\nAdemás, tu acceso es *digital y de por vida*. ♾️`,
+      `💖 Es totalmente comprensible que quieras tener seguridad antes de realizar una compra por internet.\n\n✨ *Glow Nails es un programa digital de Glow Beauty Academy.* Después de confirmar tu pago recibirás por WhatsApp tus accesos a las *50 clases* y a los materiales, bonos y regalos incluidos. 💅📲 Tu acceso es *digital y de por vida*. ♾️`,
+      `✨ Entendemos tu preocupación y es normal querer aclararlo antes de realizar una compra online. 💖\n\nCon *Glow Nails*, una vez confirmado tu pago recibirás por WhatsApp el acceso a tus *50 clases* y a todos los materiales, bonos y regalos incluidos en tu compra. 💅📲 Además, tendrás *acceso digital de por vida*. ♾️`,
+    ];
+
+    const respuestaConfianza = elegirAleatoria(respuestas);
+
+    return {
+      intencion: "confianza_real",
+      respuesta: `${respuestaConfianza}\n\n💖 *Los métodos de pago son:*\n🏦 *Transferencia bancaria*\n🏪 *Depósito en OXXO*\n\n¿Cuál prefieres? 😊`,
+    };
+  }
+
   return null;
 }
 

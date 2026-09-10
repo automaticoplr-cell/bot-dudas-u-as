@@ -144,6 +144,7 @@ function debeAgregarCierre(textoNormalizado) {
     "inicio",
     "cuantas",
     "presencial",
+    "virtual",
     "recibo",
     "certificado",
     "examen",
@@ -232,8 +233,11 @@ function respuestaDirecta(textoNormalizado) {
     };
   }
 
-  // 4. PRESENCIAL / ONLINE
-  if (textoNormalizado.includes("presencial")) {
+  // 4. PRESENCIAL / ONLINE / VIRTUAL
+  if (
+    textoNormalizado.includes("presencial") ||
+    textoNormalizado.includes("virtual")
+  ) {
     const respuestas = [
       `😊 Glow Nails *no es presencial*. Es un programa *100% online con clases pregrabadas*, para que puedas estudiar a tu propio ritmo.`,
       `💅 Las clases son *100% online y pregrabadas*, por lo que no necesitas asistir presencialmente ni conectarte en un horario específico.`,
